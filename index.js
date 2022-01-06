@@ -95,4 +95,4 @@ const checkIn = async () => {
   }
 }
 
-// checkIn()
+checkIn()
