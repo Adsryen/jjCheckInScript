@@ -25,7 +25,8 @@ jobs:
           node-version: '14'
 
       # 安装依赖并且执行脚本
-      - name: npm install && Start task
-        run: |
-          npm install
-          node run index.js
+      - name: npm install
+        run: npm install
+      
+      - name: Start task
+        run: node index.js
