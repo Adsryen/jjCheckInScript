@@ -45,6 +45,25 @@ const getlotteryStatus = async () => {
   }
 }
 
+/**
+ * 占喜气
+ *
+ */
+const dipLucky = async () => {
+  try {
+    const val = await axios({url: config.api.getDipLuckyStatus, method: 'post'})
+    console.log(val, '-----getDipLuckyStatus')
+    const { data } = await axios({url: config.api.dipLucky, method: 'post'})
+    console.log(data, '----dipLucky')
+  if (data.err_no === 0 && data.err_msg === 'success') {
+    console.log(`占喜气成功! 🎉 【当前幸运值：${data.data.total_value}/6000】`)
+  } else {
+    throw `占喜气失败！ ${data.err_msg}`
+  }
+  } catch (error) {
+    console.error(error)
+  }
+}
 
 /**
  * 抽奖 先查询是否有免费抽奖次数
@@ -57,6 +76,8 @@ const draw = async () => {
     console.warn('今日免费抽奖以用完 🥲')
     return
   }
+  // 先占一下喜气
+  await dipLucky()
 
   // 开始抽奖
   const { data } = await axios({ url: config.api.draw, method: 'post' })

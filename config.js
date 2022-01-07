@@ -17,6 +17,8 @@ module.exports = {
     // 查寻当前矿石余额
     // 抽奖
     draw: '/growth_api/v1/lottery/draw',
+    // 查询今天沾过喜气没
+    getDipLuckyStatus: '/growth_api/v1/lottery_lucky/my_lucky',
     // 沾喜气
     dipLucky: '/growth_api/v1/lottery_lucky/dip_lucky'
   }
