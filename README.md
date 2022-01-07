@@ -1,5 +1,5 @@
 # jjCheckInScript
-掘金自动签到脚本.
+掘金自动签到脚本
 
 ## Start quickly
 将项目Fork到自己的仓库，然后在`config.js`中填入掘金`cookie`，每天九点会自动触发`action`执行签到
